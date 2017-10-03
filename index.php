@@ -9,7 +9,6 @@ public function __construct()
 {
 
 	
-
   $date =  date('Y-m-d', time());
   echo "Solution 1: ";
   echo "The value of \$date: ".$date."</br>";
@@ -21,36 +20,27 @@ public function __construct()
   $year = array("2012", "396", "300","2000", "1100", "1089");
   echo "The value of \$year: </br>";
   print_r($year);
-  echo "</br>";
 
   $date_1 = strfun::rep($date);
   $this->html .= htmlTags::horizontalRule();
-  echo '<hr>';
   strfun::cmp($date,$tar);
-   $this->html .= htmlTags::horizontalRule();
-  echo '<hr>';
+  $this->html .= htmlTags::horizontalRule();
   strfun::delimit($date);
   $this->html .= htmlTags::horizontalRule();
-  echo '<hr>';
-  strfun::num_count($date,$tar);
+  strfun::num_count($date);
   $this->html .= htmlTags::horizontalRule();
-  echo '<hr>';
   strfun::str_len($date);
   $this->html .= htmlTags::horizontalRule();
-  echo '<hr>';
   strfun::ASCII($date);
   $this->html .= htmlTags::horizontalRule();
-  echo '<hr>';
   strfun::last_chr($date,$count);
   $this->html .= htmlTags::horizontalRule();
-  echo '<hr>';
   strfun::an_array($date_1);
   $this->html .= htmlTags::horizontalRule();
-  echo '<hr>';
   strfun::leap_year($year);
   $this->html .= htmlTags::horizontalRule();
-  echo '<hr>';
   strfun::leap_year_do($year);
+//$this->html .= arrayFunctions::rep($myArray);
 
 }
 
@@ -65,7 +55,7 @@ class strfun{
            {
 
                $date_1 = str_replace('-','/',$date_1);
-               echo"</br>Solution 2: </br>";
+               echo"Solution 2: </br>";
                echo "Output after replacing --->".$date_1."\r";
                return $date_1;
            }
@@ -76,12 +66,12 @@ class strfun{
            public static function cmp($date_1,$tar_1)
         
            {
-           	 echo"</br> Solution 3:";
+           	 echo"Solution 3:";
 
    		        if (strcmp($date_1, $tar) > 0) 
 
     	        {
-      		         echo '</br>the future'."\r";
+      		         echo 'the future'."\r";
                 }
 
         	         elseif (strcmp($date_1, $tar) < 0)
@@ -93,31 +83,25 @@ class strfun{
         		     elseif (strcmp($date_1, $tar) == 0)
             	    {
 
-               		echo "</br>Output ---- >Oops"."\r";
+               		echo "Output ---- >Oops"."\r";
             	    }
 
    	        }
 
     // 4. Search '/' if more then one '/' delimit with ' '.
 
-   	        public static function delimit($date_1,$test)
+   	        public static function delimit($date_1)
             
             {
-          
-		
-			$sh = "/";
-			$pts = array();
-			$ps = -1;
-				while (($ps = strpos($test, $sh, $ps+1)) !== false) {
-						$pts[] = $ps;
-					}
-						$_rlt = implode(' ', $pts);
-						print_r($_rlt)
-                        
-      }
+
+                //echo 'Output'.$date_1;
+                $domain = strpos($date_1,"/");
+                echo 'Solution 4:'.$domain;
+                return(count);     
+
+            }
 
     //5. Count the number of words in $date
-            
             public static function num_count($date)
             {        
             
@@ -217,7 +201,7 @@ public static function leap_year_do($year)
    		do {
    			 
    			 $yr = $year[$i];
-   			 echo "-->".$yr;
+   			 //echo "Year - ".$yr;
 
    			 //echo "output-->".$domain; 
 
@@ -250,9 +234,7 @@ class htmlTags {
     static public function horizontalRule() {
       return '</hr>';
     }
-    //static public function headingOne($text) {
-      //return '<h1>' . $text . '</h1>';
-    //}
+    
   }
 
 
