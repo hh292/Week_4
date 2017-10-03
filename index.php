@@ -211,7 +211,7 @@ public static function leap_year_do($year)
             switch ($yer) {
             	
             	case 1:
-            	echo "Year -".$yr."  True"."\r";
+            	echo "Year -->".$yr."  True"."\r";
             		 //echo"true  "."\r";
             		break;
             	
